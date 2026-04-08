@@ -77,6 +77,12 @@ Al ejecutar el script se corren automáticamente tres búsquedas de prueba y un 
 
 ## 📊 Ejemplos de Ejecución
 
+A continuación se muestra la salida real del script al ejecutarse:
+
+![Ejemplo de ejecución del motor de búsqueda TF-IDF](ejecucion_ejemplo.png)
+
+---
+
 ### Ejemplo 1 — Búsqueda: `"falta disciplinaria grave"`
 
 El sistema identifica los artículos más relacionados con faltas disciplinarias:
@@ -119,23 +125,21 @@ El Artículo 45 obtiene el mayor score al contener tanto "becas" como "excelenci
 
 ### Ejemplo 4 — Análisis de IDF del vocabulario
 
-El script también imprime las palabras con mayor y menor IDF del corpus completo:
-
 ```
 --- Análisis de IDF ---
 Top 5 palabras con IDF MÁS BAJO (Comunes en el corpus):
-- 'artículo':  0.0000   ← aparece en los 10 documentos → IDF = log(10/10) = 0
-- 'de':        0.2218
-- 'el':        0.2218
-- 'la':        0.3010
-- 'falta':     0.3979
+- 'artículo':    0.0000   ← aparece en los 10 documentos → IDF = log(10/10) = 0
+- 'el':          0.2218
+- 'de':          0.2218
+- 'la':          0.3010
+- 'falta':       0.3979
 
 Top 5 palabras con IDF MÁS ALTO (Raras / Específicas):
-- 'mantener':  1.0000   ← aparece solo en 1 documento → IDF = log(10/1) = 1
-- 'debe':      1.0000
-- '30':        1.0000
-- 'ninguna':   1.0000
-- '12':        1.0000
+- 'cancelación': 1.0000   ← aparece solo en 1 documento → IDF = log(10/1) = 1
+- 'ocurre':      1.0000
+- 'calendario':  1.0000
+- 'inferior':    1.0000
+- 'pasantías':   1.0000
 ```
 
 Las palabras con IDF = 0 (como "artículo") aparecen en todos los documentos y no aportan información discriminatoria. Las palabras con IDF = 1.0 son únicas en el corpus y son las más útiles para identificar documentos específicos.
